@@ -15,11 +15,7 @@ const toggleInstructions = (button) => {
     item.classList.toggle('hidden');
   });
 
-  if (button.textContent === 'Hide Instructions') {
-    button.textContent = 'Show Instructions';
-  } else {
-    button.textContent = 'Hide Instructions';
-  }
+  button.textContent = button.textContent === 'Hide Instructions' ? 'Show Instructions' : 'Hide Instructions';
 };
 document.querySelector('#instruction_button').addEventListener('click', (e) => toggleInstructions(e.target));
 document.addEventListener('keydown', (e) => {
@@ -44,11 +40,7 @@ document.querySelector('#first_name').addEventListener('input', (e) => {
 // Try change event first
 // There is another event which fires for every character. This is what we want to use.
 document.querySelector('#user_name').addEventListener('input', (e) => {
-  if (pokemonList.includes(e.target.value)) {
-    document.querySelector('#username-alert').textContent = 'Username already exists';
-  } else {
-    document.querySelector('#username-alert').textContent = 'Unique username created';
-  }
+  document.querySelector('#username-alert').textContent = pokemonList.includes(e.target.value) ? 'Username already exists' : 'Unique username created';
 });
 
 
@@ -59,11 +51,7 @@ const passwordInput = document.querySelector('#password');
 const confirmInput = document.querySelector('#confirm_password');
 [passwordInput, confirmInput].forEach((input) => {
   input.addEventListener('input', () => {
-    if (passwordInput.value === confirmInput.value) {
-      document.querySelector('#password-alert').textContent = 'Password Matches';
-    } else {
-      document.querySelector('#password-alert').textContent = 'Password does not match';
-    }
+    document.querySelector('#password-alert').textContent = passwordInput.value === confirmInput.value ? 'Password Matches' : 'Password does not match';
   });
 });
 document.querySelector('#hide-password').addEventListener('click', (e) => {
