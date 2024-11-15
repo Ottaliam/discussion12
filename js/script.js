@@ -11,15 +11,13 @@ document.querySelector('#collaborator-2-name').textContent = 'N/A';
 // Question 2
 // You can also create their own CSS classes in style.css file and use that.
 const toggleInstructions = (button) => {
+  document.querySelectorAll('.question').forEach((item) => {
+    item.classList.toggle('hidden');
+  });
+
   if (button.textContent === 'Hide Instructions') {
-    document.querySelectorAll('.question').forEach((item) => {
-      item.style.display = 'none';
-    });
     button.textContent = 'Show Instructions';
   } else {
-    document.querySelectorAll('.question').forEach((item) => {
-      item.style.display = 'block';
-    });
     button.textContent = 'Hide Instructions';
   }
 };
